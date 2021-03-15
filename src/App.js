@@ -21,10 +21,10 @@ export default function App() {
     setTxt(value);
   };
   function handleTextareaFocus({ target }) {
-    alert("textarea focus " + target.value);
+    // alert("textarea focus " + target.value);
   }
   function handleTextareaBlur({ target }) {
-    alert("textarea blur " + target.value);
+    // alert("textarea blur " + target.value);
   }
 
   /*
@@ -66,6 +66,16 @@ export default function App() {
         <option value="Ciao">Ciao</option>
         <option value="Ahoy">Ahoy</option>
       </select>
+      <br />
+      <input type="radio" id="r0" name="radio" value="0" />
+      radio0
+      <br />
+      <input type="radio" id="r1" name="radio" value="1" />
+      radio1
+      <br />
+      <input type="radio" id="r2" name="radio" value="2" />
+      radio2
+      <br />
       <h2>Start editing to see some magic happen!</h2>
       <button
         type="button"
@@ -90,6 +100,15 @@ export default function App() {
         }}
       >
         checBox hidde
+      </button>
+      <br />
+      <button
+        type="button"
+        onClick={() => {
+          document.querySelector("#r1").checked = "checked";
+        }}
+      >
+        set radio 1
       </button>
     </div>
   );
