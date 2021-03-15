@@ -8,7 +8,7 @@ export default function App() {
   // a modosítása ujra rendeli a komponens érintett részeit,
   // ezek csak a hozzá tartoó "setter" functioval modosíthatóak.
 
-  // [változó (readOnly!), setter_function]
+  // isYOurName: változó, setIsYOurName: függvény ami változtatja
   const [isYourName, setIsYourName] = useState(false);
   const [greeting, setGreeting] = useState("hello");
   const [txt, setTxt] = useState("");
