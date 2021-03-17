@@ -48,9 +48,10 @@ export default function App() {
         onChange={() => setIsYourName(!isYourName)}
       />
       <br />
-      <input type="text" value={txt} onChange={handleChangeTxt} />
+      <input type="text" id="inp1" value={txt} onChange={handleChangeTxt} />
       <br />
       <textarea
+        id="txt1"
         cols="20"
         rows="5"
         value={txt}
