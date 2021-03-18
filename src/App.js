@@ -3,7 +3,6 @@ import Greeting from "./Greeting";
 import { MY_NAME, YOUR_NAME } from "./Constants";
 import { createElement, useState } from "react";
 import RadioG from "./RadioG";
-import RadioU from "./RadioU";
 
 export default function App() {
   // az alábbi három dolog olyan "változó"  aminek
@@ -110,12 +109,6 @@ export default function App() {
       <RadioG onChange={setGVal} value={gVal} />
       <p>g={gVal}</p>
       <hr />
-      <RadioU
-        groupName="rg"
-        items={rgItems}
-        onChange={setRgVal}
-        value={rgVal}
-      />
     </div>
   );
 }
