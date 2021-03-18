@@ -1,7 +1,9 @@
 import "./styles.css";
 import Greeting from "./Greeting";
 import { MY_NAME, YOUR_NAME } from "./Constants";
-import { useState } from "react";
+import { createElement, useState } from "react";
+import Radio from "./Radio";
+import RadioG from "./RadioG";
 
 export default function App() {
   // az alábbi három dolog olyan "változó"  aminek
@@ -38,6 +40,9 @@ export default function App() {
   // A Greeting dom element két attributuma (greeting és name)
   // a hozzá tartozó react objektumban paraméterként elérhetőek
   // és kivülről is lekérdezhetőek pl. Greeting.name formában.
+  //
+
+  const [gVal, setGVal] = useState("3");
 
   return (
     <div className="App">
@@ -48,10 +53,9 @@ export default function App() {
         onChange={() => setIsYourName(!isYourName)}
       />
       <br />
-      <input type="text" id="inp1" value={txt} onChange={handleChangeTxt} />
+      <input type="text" value={txt} onChange={handleChangeTxt} />
       <br />
       <textarea
-        id="txt1"
         cols="20"
         rows="5"
         value={txt}
@@ -67,15 +71,6 @@ export default function App() {
         <option value="Ciao">Ciao</option>
         <option value="Ahoy">Ahoy</option>
       </select>
-      <br />
-      <input type="radio" id="r0" name="radio" value="0" />
-      radio0
-      <br />
-      <input type="radio" id="r1" name="radio" value="1" />
-      radio1
-      <br />
-      <input type="radio" id="r2" name="radio" value="2" />
-      radio2
       <br />
       <h2>Start editing to see some magic happen!</h2>
       <button
@@ -103,14 +98,12 @@ export default function App() {
         checBox hidde
       </button>
       <br />
-      <button
-        type="button"
-        onClick={() => {
-          document.querySelector("#r1").checked = "checked";
-        }}
-      >
-        set radio 1
-      </button>
+      <p>=======================</p>
+      <Radio name="radio2" />
+
+      <hr />
+      <RadioG onChange={setGVal} value={gVal} />
+      <p>g={gVal}</p>
     </div>
   );
 }
