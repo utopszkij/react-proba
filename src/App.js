@@ -2,8 +2,8 @@ import "./styles.css";
 import Greeting from "./Greeting";
 import { MY_NAME, YOUR_NAME } from "./Constants";
 import { createElement, useState } from "react";
-import Radio from "./Radio";
 import RadioG from "./RadioG";
+import RadioU from "./RadioU";
 
 export default function App() {
   // az alábbi három dolog olyan "változó"  aminek
@@ -43,6 +43,13 @@ export default function App() {
   //
 
   const [gVal, setGVal] = useState("3");
+
+  // dinamikus radioGroup elemek
+  const rgItems = [
+    { value: "v1", label: "label1" },
+    { value: "v2", label: "label2" }
+  ];
+  const [rgVal, setRgVal] = useState("v2");
 
   return (
     <div className="App">
@@ -99,11 +106,16 @@ export default function App() {
       </button>
       <br />
       <p>=======================</p>
-      <Radio name="radio2" />
-
       <hr />
       <RadioG onChange={setGVal} value={gVal} />
       <p>g={gVal}</p>
+      <hr />
+      <RadioU
+        groupName="rg"
+        items={rgItems}
+        onChange={setRgVal}
+        value={rgVal}
+      />
     </div>
   );
 }
